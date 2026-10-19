@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Es Dawet Ayu Solo — Segar, Original & Manisnya Pas!</title>
+<meta name="description" content="Es Dawet Ayu Solo - Dawet segar dengan santan peras asli, gula aren murni dan cendol pandan. Order via WhatsApp 0811-8448-939">
+<style>
+  :root{
+    --green:#0e7a3d; --green-dark:#0a5c2e; --green-light:#e8f6ee;
+    --brown:#8a4b1f; --aren:#c67c2e; --cream:#fffaf0; --cream2:#fdf3dd;
+    --dark:#1d2b1f; --muted:#6b7a6d; --white:#fff;
+    --shadow:0 10px 30px rgba(14,122,61,.15);
+    --radius:20px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',system-ui,-apple-system,Arial,sans-serif}
+  html{scroll-behavior:smooth}
+  body{background:var(--cream);color:var(--dark);overflow-x:hidden}
+  a{text-decoration:none;color:inherit}
+  img{max-width:100%;display:block}
+  .container{max-width:1180px;margin:0 auto;padding:0 20px}
+  section{padding:78px 0}
+  .section-tag{display:inline-block;background:var(--green-light);color:var(--green);font-weight:700;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;padding:7px 16px;border-radius:50px;margin-bottom:14px}
+  .section-title{font-size:clamp(1.7rem,4vw,2.5rem);font-weight:800;line-height:1.15;margin-bottom:12px}
+  .section-title span{color:var(--green)}
+  .section-sub{color:var(--muted);max-width:640px;line-height:1.7}
+  .center{text-align:center}.center .section-sub{margin:0 auto}
+
+  /* NAV */
+  nav{position:fixed;inset:0 0 auto 0;z-index:100;background:rgba(255,250,240,.92);backdrop-filter:blur(12px);box-shadow:0 2px 20px rgba(0,0,0,.06)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;max-width:1180px;margin:0 auto}
+  .logo{display:flex;align-items:center;gap:11px;font-weight:800;font-size:1.25rem}
+  .logo-icon{width:44px;height:44px;background:linear-gradient(135deg,var(--green),#22a85a);border-radius:13px;display:grid;place-items:center;font-size:1.4rem;box-shadow:var(--shadow)}
+  .logo small{display:block;font-size:.68rem;font-weight:600;color:var(--aren);letter-spacing:.12em;text-transform:uppercase}
+  .nav-links{display:flex;gap:30px;align-items:center;font-weight:600;font-size:.95rem}
+  .nav-links a:hover{color:var(--green)}
+  .btn{display:inline-flex;align-items:center;gap:9px;padding:13px 26px;border-radius:50px;font-weight:700;border:none;cursor:pointer;font-size:.98rem;transition:.25s}
+  .btn-wa{background:#22c15e;color:#fff;box-shadow:0 8px 22px rgba(34,193,94,.4)}
+  .btn-wa:hover{background:#1aa84f;transform:translateY(-2px)}
+  .btn-green{background:var(--green);color:#fff}.btn-green:hover{background:var(--green-dark);transform:translateY(-2px)}
+  .btn-outline{background:transparent;border:2px solid var(--green);color:var(--green)}
+  .btn-outline:hover{background:var(--green);color:#fff}
+  .btn-sm{padding:10px 20px;font-size:.9rem}
+  .hamburger{display:none;background:none;border:none;font-size:1.7rem;cursor:pointer;color:var(--dark)}
+
+  /* HERO */
+  .hero{padding:150px 0 80px;background:linear-gradient(160deg,#eaf7ee 0%,var(--cream) 55%,var(--cream2) 100%);position:relative;overflow:hidden}
+  .hero::before{content:"🌿";position:absolute;font-size:9rem;opacity:.10;top:90px;right:4%;transform:rotate(20deg)}
+  .hero::after{content:"🥥";position:absolute;font-size:7rem;opacity:.10;bottom:20px;left:2%}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;position:relative;z-index:2}
+  .badge{display:inline-flex;gap:8px;align-items:center;background:#fff;border:1px solid #d9ecd f;border:1px solid #d9ecdf;padding:8px 16px;border-radius:50px;font-size:.85rem;font-weight:600;box-shadow:0 4px 14px rgba(0,0,0,.05);margin-bottom:20px}
+  .badge .dot{width:9px;height:9px;background:#22c15e;border-radius:50%;animation:pulse 1.6s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(34,193,94,.5)}70%{box-shadow:0 0 0 9px rgba(34,193,94,0)}100%{box-shadow:0 0 0 0 rgba(34,193,94,0)}}
+  h1{font-size:clamp(2.3rem,5.5vw,3.9rem);line-height:1.08;font-weight:900;margin-bottom:18px}
+  h1 .hl{color:var(--green);position:relative;white-space:nowrap}
+  h1 .hl2{color:var(--aren)}
+  .hero p.lead{font-size:1.08rem;color:var(--muted);line-height:1.75;margin-bottom:28px;max-width:520px}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:34px}
+  .hero-meta{display:flex;gap:26px;flex-wrap:wrap}
+  .hero-meta div b{display:block;font-size:1.05rem}
+  .hero-meta div span{font-size:.82rem;color:var(--muted)}
+  .hero-img{position:relative}
+  .hero-img img{border-radius:28px;box-shadow:0 24px 50px rgba(10,92,46,.28);aspect-ratio:4/4.4;object-fit:cover;width:100%}
+  .float-card{position:absolute;background:#fff;border-radius:16px;box-shadow:0 14px 34px rgba(0,0,0,.15);padding:13px 18px;display:flex;gap:11px;align-items:center;animation:float 3.5s ease-in-out infinite}
+  .float-card b{display:block;font-size:.92rem}.float-card span{font-size:.78rem;color:var(--muted)}
+  .fc1{top:22px;left:-18px}.fc2{bottom:26px;right:-12px;animation-delay:1.2s}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+
+  /* MARQUEE */
+  .marquee{background:var(--green);color:#fff;padding:14px 0;overflow:hidden;white-space:nowrap}
+  .marquee-track{display:inline-block;animation:scroll 22s linear infinite;font-weight:700;letter-spacing:.04em}
+  @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  /* STATS */
+  .stats{background:var(--green-dark);color:#fff;padding:44px 0}
+  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center}
+  .stat b{font-size:2.1rem;display:block}
+  .stat span{opacity:.85;font-size:.9rem}
+
+  /* KEUNGGULAN */
+  .feat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:44px}
+  .feat{background:#fff;border-radius:var(--radius);padding:30px 24px;box-shadow:0 6px 20px rgba(0,0,0,.05);transition:.3s;border-top:4px solid transparent}
+  .feat:hover{transform:translateY(-8px);border-top-color:var(--green);box-shadow:var(--shadow)}
+  .feat .ic{font-size:2.2rem;margin-bottom:14px}
+  .feat h3{margin-bottom:8px;font-size:1.05rem}
+  .feat p{color:var(--muted);font-size:.9rem;line-height:1.65}
+
+  /* MENU */
+  #menu{background:#fff}
+  .menu-tools{display:flex;gap:14px;flex-wrap:wrap;justify-content:space-between;align-items:center;margin:36px 0 26px}
+  .filters{display:flex;gap:9px;flex-wrap:wrap}
+  .filter-btn{padding:10px 20px;border-radius:50px;border:2px solid #dce9de;background:#fff;font-weight:700;cursor:pointer;transition:.25s;font-size:.9rem}
+  .filter-btn.active,.filter-btn:hover{background:var(--green);color:#fff;border-color:var(--green)}
+  .search-box{display:flex;align-items:center;gap:8px;background:var(--cream);border:2px solid #eee3cd;border-radius:50px;padding:10px 18px}
+  .search-box input{border:none;background:none;outline:none;font-size:.95rem;width:170px}
+  .menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .card{background:var(--cream);border-radius:22px;overflow:hidden;box-shadow:0 6px 22px rgba(0,0,0,.06);transition:.3s;display:flex;flex-direction:column}
+  .card:hover{transform:translateY(-7px);box-shadow:var(--shadow)}
+  .card-visual{height:180px;display:grid;place-items:center;font-size:4.2rem;position:relative;overflow:hidden}
+  .card-visual img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+  .tag-best{position:absolute;top:12px;left:12px;background:#ff5a3c;color:#fff;font-size:.72rem;font-weight:800;padding:6px 12px;border-radius:50px;z-index:2;letter-spacing:.05em}
+  .card-body{padding:20px;display:flex;flex-direction:column;gap:9px;flex:1}
+  .card-body h3{font-size:1.08rem}
+  .card-body p{color:var(--muted);font-size:.88rem;line-height:1.6;flex:1}
+  .stars{color:#f5a623;font-size:.85rem}
+  .price-row{display:flex;justify-content:space-between;align-items:center;margin-top:6px}
+  .price{font-weight:800;font-size:1.15rem;color:var(--green)}
+  .price s{color:#b3b3b3;font-weight:500;font-size:.85rem;display:block}
+  .add-btn{background:var(--green);color:#fff;border:none;padding:11px 18px;border-radius:50px;font-weight:700;cursor:pointer;transition:.25s;font-size:.88rem}
+  .add-btn:hover{background:var(--green-dark);transform:scale(1.04)}
+  .empty-msg{text-align:center;color:var(--muted);padding:40px;grid-column:1/-1}
+
+  /* KALKULATOR PAKET */
+  #paket{background:linear-gradient(150deg,var(--green-light),var(--cream2))}
+  .calc-wrap{background:#fff;border-radius:26px;box-shadow:var(--shadow);display:grid;grid-template-columns:1fr 1fr;overflow:hidden;margin-top:40px}
+  .calc-left{padding:38px}
+  .calc-right{background:var(--green-dark);color:#fff;padding:38px;display:flex;flex-direction:column;justify-content:center}
+  .calc-left label{font-weight:700;font-size:.92rem;display:block;margin:20px 0 9px}
+  .calc-left label:first-child{margin-top:0}
+  input[type=range]{width:100%;accent-color:var(--green);height:8px;cursor:pointer}
+  .range-val{font-size:1.6rem;font-weight:800;color:var(--green)}
+  .paket-opts{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+  .paket-opt{border:2px solid #e2eee4;border-radius:14px;padding:14px;cursor:pointer;transition:.2s}
+  .paket-opt:hover{border-color:var(--green)}
+  .paket-opt.selected{border-color:var(--green);background:var(--green-light)}
+  .paket-opt b{display:block;font-size:.93rem}.paket-opt span{font-size:.8rem;color:var(--muted)}
+  .calc-right h3{font-size:1.2rem;margin-bottom:18px}
+  .calc-line{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px dashed rgba(255,255,255,.3);font-size:.95rem}
+  .calc-total{font-size:1.9rem;font-weight:900;margin:18px 0 6px}
+  .calc-note{font-size:.82rem;opacity:.85;line-height:1.6;margin-bottom:22px}
+  .btn-white{background:#fff;color:var(--green-dark)}.btn-white:hover{transform:translateY(-2px)}
+
+  /* TENTANG */
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+  .about-grid img{border-radius:26px;box-shadow:var(--shadow);aspect-ratio:4/3;object-fit:cover;width:100%}
+  .check-list{list-style:none;margin-top:20px;display:grid;gap:13px}
+  .check-list li{display:flex;gap:11px;align-items:flex-start;line-height:1.6;color:#3d4d3f}
+  .check-list li::before{content:"✅";flex-shrink:0}
+
+  /* TESTIMONI */
+  #testimoni{background:#fff}
+  .slider{max-width:760px;margin:40px auto 0;position:relative;overflow:hidden;border-radius:24px}
+  .slides{display:flex;transition:transform .55s ease}
+  .slide{min-width:100%;background:var(--cream);padding:42px 38px;text-align:center}
+  .slide .ava{width:66px;height:66px;border-radius:50%;margin:0 auto 14px;display:grid;place-items:center;font-size:1.7rem;color:#fff;font-weight:800}
+  .slide p{font-size:1.05rem;line-height:1.75;color:#3d4d3f;font-style:italic;margin:12px 0 16px}
+  .slide b{display:block}.slide span{color:var(--muted);font-size:.85rem}
+  .dots{display:flex;gap:8px;justify-content:center;margin-top:20px}
+  .dot-nav{width:11px;height:11px;border-radius:50%;background:#cfe3d3;border:none;cursor:pointer;transition:.25s}
+  .dot-nav.active{background:var(--green);transform:scale(1.25)}
+  .slider-btn{position:absolute;top:50%;transform:translateY(-50%);background:#fff;border:none;width:42px;height:42px;border-radius:50%;box-shadow:0 4px 14px rgba(0,0,0,.15);cursor:pointer;font-size:1.1rem;z-index:3}
+  .slider-btn:hover{background:var(--green);color:#fff}
+  .prev{left:12px}.next{right:12px}
+
+  /* FAQ + ORDER */
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:46px;align-items:start}
+  .faq-item{background:#fff;border-radius:16px;margin-bottom:13px;box-shadow:0 4px 16px rgba(0,0,0,.05);overflow:hidden}
+  .faq-q{width:100%;background:none;border:none;text-align:left;padding:19px 22px;font-weight:700;font-size:.98rem;cursor:pointer;display:flex;justify-content:space-between;gap:12px;align-items:center}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
+  .faq-a p{padding:0 22px 19px;color:var(--muted);line-height:1.7;font-size:.93rem}
+  .faq-item.open .faq-a{max-height:200px}
+  .faq-item.open .arrow{transform:rotate(180deg)}
+  .arrow{transition:.3s;color:var(--green)}
+  .order-form{background:#fff;border-radius:24px;padding:34px;box-shadow:var(--shadow)}
+  .order-form h3{margin-bottom:6px;font-size:1.3rem}
+  .order-form>p{color:var(--muted);font-size:.9rem;margin-bottom:20px;line-height:1.6}
+  .form-group{margin-bottom:16px}
+  .form-group label{font-weight:700;font-size:.88rem;display:block;margin-bottom:7px}
+  .form-group input,.form-group select,.form-group textarea{width:100%;padding:13px 16px;border:2px solid #e6eee7;border-radius:13px;font-size:.95rem;outline:none;background:var(--cream);transition:.2s;font-family:inherit}
+  .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--green);background:#fff}
+  .qty-ctrl{display:flex;align-items:center;gap:14px}
+  .qty-ctrl button{width:40px;height:40px;border-radius:50%;border:2px solid var(--green);background:#fff;color:var(--green);font-size:1.15rem;font-weight:800;cursor:pointer}
+  .qty-ctrl button:hover{background:var(--green);color:#fff}
+  .qty-ctrl b{font-size:1.2rem;min-width:28px;text-align:center}
+
+  /* KEMITRAAN */
+  #kemitraan{background:linear-gradient(160deg,#fff 0%,var(--green-light) 100%)}
+  .mitra-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin:40px 0 34px}
+  .mitra-card{background:#fff;border-radius:22px;padding:30px 26px;box-shadow:0 6px 22px rgba(0,0,0,.06);border:2px solid transparent;cursor:pointer;transition:.3s;position:relative;display:flex;flex-direction:column}
+  .mitra-card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+  .mitra-card.selected{border-color:var(--green);background:#f4fbf5;box-shadow:var(--shadow)}
+  .mitra-card .mitra-ic{font-size:2.4rem;margin-bottom:12px}
+  .mitra-card h3{font-size:1.15rem;margin-bottom:6px}
+  .mitra-price{font-size:1.55rem;font-weight:900;color:var(--green);margin:8px 0 4px}
+  .mitra-price small{font-size:.78rem;color:var(--muted);font-weight:600}
+  .mitra-card ul{list-style:none;margin:14px 0 20px;display:grid;gap:9px;flex:1}
+  .mitra-card li{font-size:.88rem;color:#3d4d3f;display:flex;gap:8px;line-height:1.55}
+  .mitra-card li::before{content:"✔️";flex-shrink:0;font-size:.78rem;margin-top:2px}
+  .mitra-pop{position:absolute;top:-13px;right:18px;background:#ff5a3c;color:#fff;font-size:.7rem;font-weight:800;letter-spacing:.05em;padding:6px 13px;border-radius:50px}
+  .mitra-check{position:absolute;top:16px;right:16px;width:28px;height:28px;border-radius:50%;background:var(--green);color:#fff;display:none;place-items:center;font-weight:800;font-size:.85rem}
+  .mitra-card.selected .mitra-check{display:grid}
+  .mitra-form-wrap{display:grid;grid-template-columns:.92fr 1.08fr;gap:26px;align-items:stretch;margin-top:8px}
+  .mitra-info{background:var(--green-dark);color:#fff;border-radius:24px;padding:36px;display:flex;flex-direction:column;justify-content:center}
+  .mitra-info h3{font-size:1.45rem;line-height:1.35;margin-bottom:14px}
+  .mitra-info p{opacity:.9;line-height:1.75;font-size:.95rem;margin-bottom:18px}
+  .mitra-info ul{list-style:none;display:grid;gap:12px}
+  .mitra-info li{display:flex;gap:10px;line-height:1.6;font-size:.93rem}
+  .mitra-form{background:#fff;border-radius:24px;padding:34px;box-shadow:var(--shadow)}
+  .mitra-form h3{font-size:1.3rem;margin-bottom:6px}
+  .mitra-form>p{color:var(--muted);font-size:.9rem;line-height:1.65;margin-bottom:20px}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .radio-row{display:flex;gap:10px;flex-wrap:wrap}
+  .radio-pill{border:2px solid #e6eee7;background:var(--cream);padding:10px 16px;border-radius:50px;cursor:pointer;font-size:.88rem;font-weight:600;transition:.2s}
+  .radio-pill:has(input:checked){background:var(--green-light);border-color:var(--green);color:var(--green)}
+  .radio-pill input{accent-color:var(--green)}
+  .form-note{font-size:.78rem;color:var(--muted);line-height:1.6;margin-top:12px;text-align:center}
+  @media(max-width:960px){.mitra-grid,.mitra-form-wrap{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}}
+
+  /* CTA */
+  .cta-band{background:linear-gradient(120deg,var(--green),#1d9e52);border-radius:28px;padding:54px 40px;text-align:center;color:#fff;margin-top:10px}
+  .cta-band h2{font-size:clamp(1.6rem,3.5vw,2.3rem);margin-bottom:12px}
+  .cta-band p{opacity:.92;margin-bottom:26px;line-height:1.7}
+
+  /* FOOTER */
+  footer{background:#12291a;color:#cfe3d3;padding:60px 0 0;margin-top:80px}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:36px;padding-bottom:40px}
+  footer h4{color:#fff;margin-bottom:16px}
+  footer p,footer li{font-size:.9rem;line-height:1.8;color:#a9c6ae}
+  footer ul{list-style:none}footer li{margin-bottom:7px}
+  footer a:hover{color:#fff}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,.12);padding:20px 0;text-align:center;font-size:.85rem;color:#8fb493}
+
+  /* FLOATING */
+  .float-wa{position:fixed;bottom:24px;right:24px;z-index:200;background:#22c15e;color:#fff;width:62px;height:62px;border-radius:50%;display:grid;place-items:center;font-size:1.8rem;box-shadow:0 10px 28px rgba(34,193,94,.5);animation:float 3s ease-in-out infinite}
+  .float-cart{position:fixed;bottom:98px;right:24px;z-index:200;background:var(--aren);color:#fff;width:62px;height:62px;border-radius:50%;display:grid;place-items:center;font-size:1.6rem;box-shadow:0 10px 28px rgba(198,124,46,.5);cursor:pointer;border:none}
+  .cart-count{position:absolute;top:-4px;right:-4px;background:#ff3b30;color:#fff;font-size:.72rem;font-weight:800;min-width:22px;height:22px;border-radius:50%;display:grid;place-items:center;padding:0 5px}
+
+  /* CART DRAWER */
+  .overlay{position:fixed;inset:0;background:rgba(10,30,16,.55);z-index:300;opacity:0;pointer-events:none;transition:.3s}
+  .overlay.show{opacity:1;pointer-events:auto}
+  .drawer{position:fixed;top:0;right:-430px;width:400px;max-width:92vw;height:100dvh;background:#fff;z-index:301;transition:right .35s ease;display:flex;flex-direction:column;box-shadow:-10px 0 40px rgba(0,0,0,.2)}
+  .drawer.show{right:0}
+  .drawer-head{padding:22px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #eee}
+  .drawer-head h3{font-size:1.15rem}
+  .close-btn{background:var(--cream);border:none;width:38px;height:38px;border-radius:50%;font-size:1.1rem;cursor:pointer}
+  .cart-items{flex:1;overflow-y:auto;padding:18px 22px}
+  .cart-item{display:flex;gap:13px;padding:14px 0;border-bottom:1px dashed #e8e8e8;align-items:center}
+  .cart-item .ci-ic{width:52px;height:52px;border-radius:13px;display:grid;place-items:center;font-size:1.5rem;flex-shrink:0}
+  .cart-item h4{font-size:.93rem}.cart-item .ci-price{color:var(--green);font-weight:700;font-size:.88rem}
+  .ci-qty{display:flex;align-items:center;gap:9px;margin-left:auto}
+  .ci-qty button{width:28px;height:28px;border-radius:50%;border:1.5px solid var(--green);background:#fff;color:var(--green);font-weight:800;cursor:pointer;line-height:1}
+  .drawer-foot{padding:22px;border-top:1px solid #eee;background:var(--cream)}
+  .drawer-foot .row{display:flex;justify-content:space-between;margin-bottom:8px;font-size:.93rem}
+  .drawer-foot .total{font-size:1.15rem;font-weight:800}
+  .drawer-foot .btn{width:100%;justify-content:center;margin-top:12px}
+  .cart-empty{text-align:center;color:var(--muted);padding:50px 10px;line-height:1.7}
+
+  /* TOAST */
+  .toast{position:fixed;bottom:100px;left:50%;transform:translate(-50%,80px);background:var(--dark);color:#fff;padding:14px 26px;border-radius:50px;font-weight:600;font-size:.92rem;z-index:400;transition:.4s;box-shadow:0 12px 30px rgba(0,0,0,.3);text-align:center;max-width:90vw}
+  .toast.show{transform:translate(-50%,0)}
+
+  .reveal{opacity:0;transform:translateY(28px);transition:.7s ease}
+  .reveal.visible{opacity:1;transform:none}
+
+  @media(max-width:960px){
+    .hero-grid,.about-grid,.calc-wrap,.two-col{grid-template-columns:1fr}
+    .feat-grid,.stats-grid{grid-template-columns:repeat(2,1fr)}
+    .menu-grid{grid-template-columns:repeat(2,1fr)}
+    .foot-grid{grid-template-columns:1fr 1fr}
+    .fc1{left:6px}.fc2{right:6px}
+  }
+  @media(max-width:640px){
+    .nav-links{position:fixed;top:72px;left:0;right:0;background:#fff;flex-direction:column;padding:24px;gap:18px;box-shadow:0 20px 30px rgba(0,0,0,.1);display:none}
+    .nav-links.show{display:flex}
+    .hamburger{display:block}
+    .nav-links .btn{width:100%;justify-content:center}
+    .menu-grid{grid-template-columns:1fr}
+    .search-box input{width:120px}
+    section{padding:56px 0}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="nav-in">
+    <a href="#" class="logo">
+      <div class="logo-icon">🍧</div>
+      <div>Es Dawet Ayu<small>Solo • Segar Original</small></div>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="#menu">Menu</a>
+      <a href="#paket">Paket Acara</a>
+      <a href="#tentang">Tentang Kami</a>
+      <a href="#testimoni">Testimoni</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn btn-wa btn-sm" href="https://wa.me/628118448939?text=Halo%20Es%20Dawet%20Ayu%20Solo%2C%20saya%20mau%20order%20es%20dawet%20%F0%9F%98%8A" target="_blank" rel="noopener">💬 Order via WA</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">☰</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="badge"><span class="dot"></span> Buka Setiap Hari • 09.00 – 17.00 WIB</div>
+      <h1>Segarnya <span class="hl">Es Dawet</span><br>Original, <span class="hl2">Manisnya Pas!</span></h1>
+      <p class="lead">Cendol pandan lembut, santan peras segar setiap pagi, dan gula aren murni yang legit. Sekali seruput, langsung nostalgia rasa dawet Original tempo dulu!</p>
+      <div class="hero-cta">
+        <a class="btn btn-wa" href="https://wa.me/628118448939?text=Halo%20Es%20Dawet%20Ayu%20Solo%2C%20saya%20mau%20order%20es%20dawet%20%F0%9F%98%8A" target="_blank" rel="noopener">💬 Pesan Sekarang</a>
+        <a class="btn btn-outline" href="#menu">🍧 Lihat Menu</a>
+      </div>
+      <div class="hero-meta">
+        <div><b>⭐ 4.9/5.0</b><span>2.300+ ulasan pelanggan</span></div>
+        <div><b>📞 0811-8448-939</b><span>WhatsApp / Telepon</span></div>
+        <div><b>🛵 Bisa Antar</b><span>Area Solo & sekitarnya</span></div>
+      </div>
+    </div>
+    <div class="hero-img">
+      <img src="images/hero-dawet.jpg" alt="Es Dawet Ayu Segar">
+      <div class="float-card fc1"><span style="font-size:1.5rem">🌿</span><div><b>100% Pandan Asli</b><span>Tanpa pewarna buatan</span></div></div>
+      <div class="float-card fc2"><span style="font-size:1.5rem">🔥</span><div><b>Terlaris Hari Ini</b><span>350+ gelas terjual</span></div></div>
+    </div>
+  </div>
+</header>
+
+<!-- MARQUEE -->
+<div class="marquee"><div class="marquee-track" id="marquee"></div></div>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="container stats-grid">
+    <div class="stat"><b><span class="counter" data-target="12">0</span> Tahun</b><span>Berjualan Sejak 2013</span></div>
+    <div class="stat"><b><span class="counter" data-target="85000">0</span>+</b><span>Gelas Terjual</span></div>
+    <div class="stat"><b><span class="counter" data-target="450">0</span>+</b><span>Acara & Hajatan Dilayani</span></div>
+    <div class="stat"><b><span class="counter" data-target="98">0</span>%</b><span>Pelanggan Puas</span></div>
+  </div>
+</div>
+
+<!-- KEUNGGULAN -->
+<section>
+  <div class="container">
+    <div class="center reveal">
+      <span class="section-tag">Kenapa Harus Kami?</span>
+      <h2 class="section-title">Rasa Original yang <span>Bikin Nagih</span></h2>
+      <p class="section-sub">Kami menjaga resep turun-temurun dengan bahan pilihan segar setiap hari. Tanpa pengawet, tanpa pemanis buatan.</p>
+    </div>
+    <div class="feat-grid">
+      <div class="feat reveal"><div class="ic">🌿</div><h3>Cendol Pandan Asli</h3><p>Dicetak fresh setiap pagi dari daun pandan & suji asli, teksturnya kenyal lembut dan wangi alami.</p></div>
+      <div class="feat reveal"><div class="ic">🥥</div><h3>Santan Peras Segar</h3><p>Kelapa tua pilihan diperas dadakan, gurihnya nendang dan tidak mudah basi. Dijamin tidak pakai santan instan!</p></div>
+      <div class="feat reveal"><div class="ic">🍯</div><h3>Gula Aren Murni</h3><p>Kuah gula aren asli tanpa campuran gula pasir berlebih — manis legit, pas di lidah, tidak bikin seret.</p></div>
+      <div class="feat reveal"><div class="ic">🧊</div><h3>Es Batu Higienis</h3><p>Menggunakan es kristal food-grade dari air matang yang bersih dan aman untuk seluruh keluarga.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section id="menu">
+  <div class="container">
+    <div class="center reveal">
+      <span class="section-tag">Menu Kami</span>
+      <h2 class="section-title">Pilih Dawet <span>Favoritmu</span> 🍧</h2>
+      <p class="section-sub">Klik <b>+ Keranjang</b> untuk mengumpulkan pesanan, lalu checkout langsung ke WhatsApp kami. Gampang banget!</p>
+    </div>
+    <div class="menu-tools">
+      <div class="filters" id="filters">
+        <button class="filter-btn active" data-filter="semua">Semua</button>
+        <button class="filter-btn" data-filter="Original">Original</button>
+        <button class="filter-btn" data-filter="spesial">Spesial</button>
+        <button class="filter-btn" data-filter="paket">Paket Hemat</button>
+      </div>
+      <div class="search-box">🔍 <input type="text" id="searchInput" placeholder="Cari menu..."></div>
+    </div>
+    <div class="menu-grid" id="menuGrid"></div>
+  </div>
+</section>
+
+<!-- KALKULATOR PAKET ACARA -->
+<section id="paket">
+  <div class="container">
+    <div class="center reveal">
+      <span class="section-tag">Paket Hajatan & Acara</span>
+      <h2 class="section-title">Hitung Sendiri <span>Estimasi Biayanya</span> 🧮</h2>
+      <p class="section-sub">Geser jumlah tamu dan pilih paketnya — harga langsung terhitung otomatis. Cocok untuk pernikahan, arisan, pengajian, ulang tahun, dan acara kantor!</p>
+    </div>
+    <div class="calc-wrap reveal">
+      <div class="calc-left">
+        <label>👥 Jumlah Tamu / Porsi</label>
+        <div class="range-val"><span id="guestVal">100</span> <small style="font-size:.9rem;color:var(--muted)">porsi</small></div>
+        <input type="range" id="guestRange" min="25" max="1000" step="25" value="100">
+        <label>📦 Pilih Paket per Porsi</label>
+        <div class="paket-opts" id="paketOpts">
+          <div class="paket-opt" data-name="Paket Original" data-price="7000"><b>Paket Original</b><span>Rp7.000/porsi — dawet original + gerobak</span></div>
+          <div class="paket-opt selected" data-name="Paket Komplit" data-price="10000"><b>Paket Komplit ⭐</b><span>Rp10.000/porsi — + nangka, ketan hitam & pramusaji</span></div>
+          <div class="paket-opt" data-name="Paket Premium Durian" data-price="15000"><b>Paket Premium</b><span>Rp15.000/porsi — topping durian + semua varian</span></div>
+          <div class="paket-opt" data-name="Paket Prasmanan VIP" data-price="18000"><b>Paket VIP</b><span>Rp18.000/porsi — booth cantik + free tester</span></div>
+        </div>
+        <label>🚚 Area Pengiriman</label>
+        <div class="paket-opts" id="areaOpts">
+          <div class="paket-opt selected" data-name="Dalam Kota Solo" data-price="0"><b>Dalam Kota Solo</b><span>GRATIS ongkir</span></div>
+          <div class="paket-opt" data-name="Luar Kota (maks 30 km)" data-price="150000"><b>Luar Kota</b><span>+ Rp150.000 transport</span></div>
+        </div>
+      </div>
+      <div class="calc-right">
+        <h3>📋 Ringkasan Estimasi</h3>
+        <div class="calc-line"><span>Paket dipilih</span><b id="sumPaket">Paket Komplit</b></div>
+        <div class="calc-line"><span>Jumlah porsi</span><b id="sumGuest">100 porsi</b></div>
+        <div class="calc-line"><span>Harga per porsi</span><b id="sumPrice">Rp10.000</b></div>
+        <div class="calc-line"><span>Transport</span><b id="sumShip">GRATIS</b></div>
+        <div class="calc-total" id="sumTotal">Rp1.000.000</div>
+        <p class="calc-note">*Harga estimasi awal. Sudah termasuk gerobak/booth, peralatan saji & es batu. DP cukup 30%, pelunasan hari-H. Diskon spesial untuk 500+ porsi!</p>
+        <button class="btn btn-white" id="calcOrderBtn">💬 Booking Tanggal via WhatsApp</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TENTANG -->
+<section id="tentang">
+  <div class="container about-grid">
+    <div class="reveal"><img src="images/dawet-Original.jpg" alt="Gerobak Es Dawet Ayu Solo"></div>
+    <div class="reveal">
+      <span class="section-tag">Tentang Kami</span>
+      <h2 class="section-title">Dari Gerobak Kecil, <span>Kini Kesayangan Warga Solo</span></h2>
+      <p class="section-sub">Berawal dari gerobak dorong di pasar tradisional sejak 2013, <b>Es Dawet Ayu Solo</b> kini melayani ribuan pelanggan setiap bulan — dari pembeli harian, pesanan kantor, sampai ratusan acara pernikahan dan hajatan besar.</p>
+      <ul class="check-list">
+        <li><span><b>Resep turun-temurun</b> — racikan keluarga yang tidak berubah sejak hari pertama berjualan.</span></li>
+        <li><span><b>Produksi fresh setiap hari</b> — cendol dicetak pagi hari, santan diperas dadakan, tidak pernah stok kemarin.</span></li>
+        <li><span><b>Siap untuk acara besar</b> — gerobak & booth cantik, pramusaji rapi, sanggup 25–1.000+ porsi.</span></li>
+        <li><span><b>Harga jujur & bersahabat</b> — mulai Rp8.000 saja, rasa bintang lima!</span></li>
+      </ul>
+      <br>
+      <a class="btn btn-green" href="https://wa.me/628118448939?text=Halo%20Es%20Dawet%20Ayu%20Solo%2C%20saya%20mau%20tanya-tanya%20dulu%20tentang%20paket%20acara%20%F0%9F%98%8A" target="_blank" rel="noopener">💬 Tanya-tanya Dulu, Gratis!</a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONI -->
+<section id="testimoni">
+  <div class="container">
+    <div class="center reveal">
+      <span class="section-tag">Kata Pelanggan</span>
+      <h2 class="section-title">Mereka Sudah <span>Membuktikannya</span> ⭐</h2>
+    </div>
+    <div class="slider reveal">
+      <div class="slides" id="slides"></div>
+      <button class="slider-btn prev" id="prevBtn" aria-label="Sebelumnya">‹</button>
+      <button class="slider-btn next" id="nextBtn" aria-label="Berikutnya">›</button>
+    </div>
+    <div class="dots" id="dots"></div>
+  </div>
+</section>
+
+<!-- KEMITRAAN -->
+<section id="kemitraan">
+  <div class="container">
+    <div class="center reveal">
+      <span class="section-tag">Peluang Usaha</span>
+      <h2 class="section-title">Buka Usaha <span>Es Dawet</span> Bareng Kami! 🤝</h2>
+      <p class="section-sub">Modal terjangkau, balik modal cepat, dibimbing sampai bisa jualan. Pilih paketnya lalu isi form — tim kemitraan kami akan menghubungimu via WhatsApp.</p>
+    </div>
+
+    <div class="mitra-grid" id="mitraCards">
+      <article class="mitra-card" data-paket="Paket Gerobak Hemat — Rp4,9 Juta">
+        <div class="mitra-check">✓</div>
+        <div class="mitra-ic">🛒</div>
+        <h3>Paket Gerobak Hemat</h3>
+        <p style="color:var(--muted);font-size:.88rem">Cocok untuk pemula, jualan di depan rumah / pasar / sekolah.</p>
+        <div class="mitra-price">Rp4,9 Jt <small>sekali bayar</small></div>
+        <ul>
+          <li>Gerobak dawet eksklusif + branding</li>
+          <li>Peralatan jualan lengkap siap pakai</li>
+          <li>Bahan baku awal untuk ±200 porsi</li>
+          <li>Training resep & SOP pembuatan</li>
+          <li>Banner promosi + desain menu</li>
+        </ul>
+        <button class="btn btn-outline btn-sm" style="justify-content:center">Pilih Paket Ini</button>
+      </article>
+
+      <article class="mitra-card selected" data-paket="Paket Booth — Rp9,9 Juta">
+        <span class="mitra-pop">⭐ PALING LARIS</span>
+        <div class="mitra-check">✓</div>
+        <div class="mitra-ic">🏪</div>
+        <h3>Paket Booth</h3>
+        <p style="color:var(--muted);font-size:.88rem">Untuk di teras minimarket, kantin, food court & area ramai.</p>
+        <div class="mitra-price">Rp9,9 Jt <small>sekali bayar</small></div>
+        <ul>
+          <li>Booth premium + neon box / signage</li>
+          <li>Peralatan lengkap + freezer kecil</li>
+          <li>Bahan baku awal untuk ±500 porsi</li>
+          <li>Training + pendampingan grand opening</li>
+          <li>Seragam karyawan + materi promosi digital</li>
+          <li>Dibantu survei lokasi usaha</li>
+        </ul>
+        <button class="btn btn-green btn-sm" style="justify-content:center">Pilih Paket Ini</button>
+      </article>
+
+      <article class="mitra-card" data-paket="Paket Outlet Premium — Rp19,9 Juta">
+        <div class="mitra-check">✓</div>
+        <div class="mitra-ic">🏬</div>
+        <h3>Paket Outlet Premium</h3>
+        <p style="color:var(--muted);font-size:.88rem">Konsep kedai mini dengan tempat duduk, cocok untuk lokasi strategis.</p>
+        <div class="mitra-price">Rp19,9 Jt <small>sekali bayar</small></div>
+        <ul>
+          <li>Set outlet lengkap: booth + meja kursi</li>
+          <li>Freezer, dispenser & peralatan premium</li>
+          <li>Bahan baku awal untuk ±1.000 porsi</li>
+          <li>Training karyawan + pendampingan 7 hari</li>
+          <li>Eksklusif area (1 mitra per kecamatan)*</li>
+          <li>Konsultasi bisnis & promosi berkala</li>
+        </ul>
+        <button class="btn btn-outline btn-sm" style="justify-content:center">Pilih Paket Ini</button>
+      </article>
+    </div>
+    <p style="text-align:center;color:var(--muted);font-size:.8rem;margin-top:-14px">*Syarat & ketentuan berlaku. Harga di atas adalah contoh paket kemitraan dan dapat disesuaikan setelah survei. Tanpa royalti bulanan — keuntungan 100% milik mitra!</p>
+
+    <div class="mitra-form-wrap">
+      <div class="mitra-info reveal">
+        <h3>Kenapa Bermitra dengan Es Dawet Ayu Solo? 🌿</h3>
+        <p>Brand yang sudah berjalan sejak 2013 dengan resep terbukti laris. Kamu tidak mulai dari nol — tinggal jalan!</p>
+        <ul>
+          <li>💸 <span><b>Tanpa royalti & franchise fee bulanan</b> — keuntungan sepenuhnya milikmu.</span></li>
+          <li>📈 <span><b>Estimasi balik modal 2–5 bulan</b> dengan penjualan 50–100 gelas/hari.*</span></li>
+          <li>🥥 <span><b>Pasokan bahan baku terjamin</b> — cendol & gula aren bisa pesan dari pusat, kualitas konsisten.</span></li>
+          <li>🎓 <span><b>Dibimbing dari nol</b> — training resep, cara jualan, sampai tips promosi online.</span></li>
+          <li>📱 <span><b>Didukung promosi digital</b> — outlet mitramu ikut dipromosikan di media sosial kami.</span></li>
+        </ul>
+        <p style="font-size:.78rem;opacity:.75;margin:16px 0 0">*Estimasi, hasil aktual tergantung lokasi & operasional masing-masing mitra.</p>
+      </div>
+
+      <div class="mitra-form reveal" id="formKemitraan">
+        <h3>📝 Form Pendaftaran Kemitraan</h3>
+        <p>Isi data di bawah ini. Setelah klik tombol kirim, data otomatis diteruskan ke WhatsApp admin kemitraan kami di <b>0811-8448-939</b>.</p>
+        <form id="mitraForm" novalidate>
+          <div class="form-row">
+            <div class="form-group"><label>Nama Lengkap *</label><input type="text" id="mNama" placeholder="Contoh: Budi Santoso" required></div>
+            <div class="form-group"><label>No. WhatsApp Aktif *</label><input type="tel" id="mWa" placeholder="Contoh: 0812xxxxxxx" required></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>Kota / Kabupaten *</label><input type="text" id="mKota" placeholder="Contoh: Solo / Sukoharjo / Semarang" required></div>
+            <div class="form-group"><label>Email (opsional)</label><input type="email" id="mEmail" placeholder="emailkamu@gmail.com"></div>
+          </div>
+          <div class="form-group"><label>Alamat / Rencana Lokasi Usaha</label><textarea id="mAlamat" rows="2" placeholder="Contoh: Jl. Slamet Riyadi, depan sekolah / dekat pasar..."></textarea></div>
+          <div class="form-group">
+            <label>Pilih Paket Kemitraan *</label>
+            <select id="mPaket">
+              <option>Paket Gerobak Hemat — Rp4,9 Juta</option>
+              <option selected>Paket Booth — Rp9,9 Juta</option>
+              <option>Paket Outlet Premium — Rp19,9 Juta</option>
+              <option>Belum tahu, minta rekomendasi dulu</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Modal yang Disiapkan</label>
+              <select id="mModal">
+                <option>Di bawah Rp5 juta</option>
+                <option>Rp5 – 10 juta</option>
+                <option selected>Rp10 – 20 juta</option>
+                <option>Di atas Rp20 juta</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Rencana Mulai Usaha</label>
+              <select id="mRencana">
+                <option>Secepatnya (&lt; 1 bulan)</option>
+                <option>1 – 3 bulan lagi</option>
+                <option>Masih survei / tanya-tanya dulu</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Sudah Punya Lokasi Usaha?</label>
+            <div class="radio-row">
+              <label class="radio-pill"><input type="radio" name="mLokasi" value="Sudah punya lokasi"> ✅ Sudah punya</label>
+              <label class="radio-pill"><input type="radio" name="mLokasi" value="Belum punya lokasi" checked> 🔍 Belum, minta dibantu cari</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Pengalaman Usaha</label>
+            <div class="radio-row">
+              <label class="radio-pill"><input type="radio" name="mPengalaman" value="Pemula / belum pernah usaha" checked> 🌱 Pemula</label>
+              <label class="radio-pill"><input type="radio" name="mPengalaman" value="Pernah usaha kuliner"> 🍜 Pernah usaha kuliner</label>
+              <label class="radio-pill"><input type="radio" name="mPengalaman" value="Pernah usaha non-kuliner"> 🏪 Pernah usaha lain</label>
+            </div>
+          </div>
+          <div class="form-group"><label>Pertanyaan / Pesan Tambahan (opsional)</label><textarea id="mCatatan" rows="2" placeholder="Contoh: Apakah bisa cicilan? Apakah ada mitra di kota saya?"></textarea></div>
+          <button type="submit" class="btn btn-wa" style="width:100%;justify-content:center;font-size:1rem">💬 Daftar Kemitraan via WhatsApp</button>
+          <p class="form-note">🔒 Data kamu aman dan hanya digunakan untuk keperluan info kemitraan. Tanpa spam, tanpa kewajiban membeli — konsultasi GRATIS!</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ + FORM ORDER -->
+<section id="faq">
+  <div class="container two-col">
+    <div class="reveal">
+      <span class="section-tag">Sering Ditanyakan</span>
+      <h2 class="section-title" style="margin-bottom:26px">Pertanyaan <span>Populer</span> ❓</h2>
+      <div id="faqList"></div>
+    </div>
+    <div class="order-form reveal">
+      <h3>⚡ Order Cepat</h3>
+      <p>Isi form singkat ini, pesananmu langsung terkirim ke WhatsApp admin. Fast respon jam 09.00–17.00 WIB!</p>
+      <form id="quickForm">
+        <div class="form-group"><label>Nama Kamu</label><input type="text" id="fNama" placeholder="Contoh: Budi Santoso" required></div>
+        <div class="form-group"><label>Pilih Varian</label><select id="fVarian"></select></div>
+        <div class="form-group">
+          <label>Jumlah</label>
+          <div class="qty-ctrl">
+            <button type="button" id="qMinus">−</button><b id="qVal">1</b><button type="button" id="qPlus">+</button>
+            <span id="qTotal" style="font-weight:700;color:var(--green)"></span>
+          </div>
+        </div>
+        <div class="form-group"><label>Catatan (opsional)</label><textarea id="fCatatan" rows="2" placeholder="Contoh: gula dipisah, esnya sedikit saja..."></textarea></div>
+        <button type="submit" class="btn btn-wa" style="width:100%;justify-content:center">💬 Kirim Pesanan ke WhatsApp</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="container">
+  <div class="cta-band reveal">
+    <h2>☀️ Panas-panas Gini, Enaknya Minum Dawet!</h2>
+    <p>Jangan sampai kehabisan — stok harian terbatas karena selalu dibuat fresh.<br>Hubungi kami sekarang juga:</p>
+    <a class="btn btn-white" href="tel:+628118448939" style="font-size:1.1rem">📞 0811-8448-939</a>
+    <a class="btn btn-wa" href="https://wa.me/628118448939" target="_blank" rel="noopener" style="margin-left:10px">💬 Chat WhatsApp</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <a href="#" class="logo" style="color:#fff;margin-bottom:14px"><div class="logo-icon">🍧</div><div>Es Dawet Ayu<small>Solo • Segar Original</small></div></a>
+        <p>Es dawet Original dengan cendol pandan asli, santan peras segar, dan gula aren murni. Melayani pembelian harian & paket acara sejak 2013.</p>
+      </div>
+      <div>
+        <h4>Menu Favorit</h4>
+        <ul><li><a href="#menu">Es Dawet Original</a></li><li><a href="#menu">Es Dawet Durian</a></li><li><a href="#menu">Es Dawet Komplit</a></li><li><a href="#paket">Paket Acara / Hajatan</a></li></ul>
+      </div>
+      <div>
+        <h4>Tautan Cepat</h4>
+        <ul><li><a href="#tentang">Tentang Kami</a></li><li><a href="#testimoni">Testimoni</a></li><li><a href="#faq">FAQ</a></li><li><a href="#menu">Lihat Menu</a></li></ul>
+      </div>
+      <div>
+        <h4>Hubungi Kami</h4>
+        <ul>
+          <li>📞 WA: <a href="https://wa.me/628118448939" target="_blank" rel="noopener"><b style="color:#fff">0811-8448-939</b></a></li>
+          <li>🕘 Setiap Hari 09.00 – 17.00 WIB</li>
+          <li>📍 Solo, Jawa Tengah</li>
+          <li>🛵 Delivery area Solo & sekitarnya</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">© 2026 Es Dawet Ayu Solo — Dibuat dengan 🌿 pandan asli & gula aren murni. Selamat menikmati!</div>
+  </div>
+</footer>
+
+<!-- FLOATING BUTTONS -->
+<button class="float-cart" id="cartBtn" aria-label="Keranjang">🛒<span class="cart-count" id="cartCount">0</span></button>
+<a class="float-wa" href="https://wa.me/628118448939?text=Halo%20Es%20Dawet%20Ayu%20Solo%2C%20saya%20mau%20order%20es%20dawet%20%F0%9F%98%8A" target="_blank" rel="noopener" aria-label="Chat WhatsApp">💬</a>
+
+<!-- CART DRAWER -->
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer">
+  <div class="drawer-head"><h3>🛒 Keranjang Kamu</h3><button class="close-btn" id="closeDrawer">✕</button></div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="drawer-foot">
+    <div class="row"><span>Subtotal</span><span id="cartSubtotal">Rp0</span></div>
+    <div class="row"><span>Ongkir (ambil sendiri / nego via WA)</span><span style="color:var(--green);font-weight:700">Fleksibel</span></div>
+    <div class="row total"><span>Total</span><span id="cartTotal">Rp0</span></div>
+    <button class="btn btn-wa" id="checkoutBtn">💬 Checkout via WhatsApp</button>
+    <button class="btn btn-outline" id="clearCart" style="width:100%;justify-content:center;margin-top:9px">🗑️ Kosongkan Keranjang</button>
+  </div>
+</aside>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const WA = "628118448939";
+const rupiah = n => "Rp" + n.toLocaleString("id-ID");
+
+/* ===== DATA MENU ===== */
+const PRODUCTS = [
+  {id:1, name:"Es Dawet Original", cat:"Original", price:8000, old:10000, emoji:"🍧", bg:"linear-gradient(135deg,#b8e6c5,#e8f6ee)", img:"images/hero-dawet.jpg", best:true, rating:"4.9 (1.240)", desc:"Cendol pandan asli, santan peras segar, gula aren murni & es kristal. Rasa Original yang melegenda!"},
+  {id:2, name:"Es Dawet Nangka", cat:"Original", price:10000, old:null, emoji:"🟡", bg:"linear-gradient(135deg,#ffe9a8,#fff6dd)", img:null, best:false, rating:"4.8 (860)", desc:"Dawet original ditambah potongan nangka matang yang harum dan manis alami."},
+  {id:3, name:"Es Dawet Tape Singkong", cat:"Original", price:10000, old:null, emoji:"🍠", bg:"linear-gradient(135deg,#f3d9b8,#fdf3dd)", img:null, best:false, rating:"4.8 (540)", desc:"Perpaduan dawet dengan tape singkong pilihan, rasa manis-asam segar yang khas."},
+  {id:4, name:"Es Dawet Ketan Hitam", cat:"Original", price:11000, old:null, emoji:"🟣", bg:"linear-gradient(135deg,#d9c7ec,#f1eafd)", img:null, best:false, rating:"4.9 (720)", desc:"Tambahan ketan hitam pulen yang gurih, bikin kenyang dan makin nikmat."},
+  {id:5, name:"Es Dawet Durian", cat:"spesial", price:15000, old:18000, emoji:"👑", bg:"linear-gradient(135deg,#ffe9a8,#fff3c9)", img:"images/dawet-durian.jpg", best:true, rating:"5.0 (980)", desc:"Sang raja! Dawet original dengan daging durian asli melimpah, creamy dan wangi banget."},
+  {id:6, name:"Es Dawet Alpukat", cat:"spesial", price:13000, old:null, emoji:"🥑", bg:"linear-gradient(135deg,#cdeac0,#eef8e6)", img:null, best:false, rating:"4.9 (610)", desc:"Potongan alpukat mentega segar berpadu santan gurih — lembut, creamy, menyehatkan."},
+  {id:7, name:"Es Dawet Komplit", cat:"spesial", price:14000, old:16000, emoji:"🌈", bg:"linear-gradient(135deg,#ffd9c0,#ffeee2)", img:null, best:true, rating:"4.9 (1.050)", desc:"Semua topping jadi satu: nangka, ketan hitam, tape & mutiara. Paling rame, paling puas!"},
+  {id:8, name:"Paket Keluarga (5 Porsi)", cat:"paket", price:35000, old:40000, emoji:"👨‍👩‍👧‍👦", bg:"linear-gradient(135deg,#bde0fe,#e7f3ff)", img:"images/dawet-Original.jpg", best:false, rating:"4.9 (430)", desc:"5 porsi dawet original dalam kemasan praktis untuk keluarga di rumah. Lebih hemat!"},
+  {id:9, name:"Paket Arisan (20 Porsi)", cat:"paket", price:130000, old:160000, emoji:"🎉", bg:"linear-gradient(135deg,#ffc8dd,#ffeaf2)", img:null, best:false, rating:"5.0 (210)", desc:"20 porsi + gratis antar area Solo. Andalan ibu-ibu arisan & acara kumpul keluarga."},
+];
+
+/* ===== RENDER MENU ===== */
+const menuGrid = document.getElementById("menuGrid");
+let activeFilter = "semua", searchText = "";
+function renderMenu(){
+  const list = PRODUCTS.filter(p =>
+    (activeFilter==="semua" || p.cat===activeFilter) &&
+    p.name.toLowerCase().includes(searchText)
+  );
+  menuGrid.innerHTML = list.length ? list.map(p => `
+    <article class="card">
+      <div class="card-visual" style="background:${p.bg}">
+        ${p.img ? `<img src="${p.img}" alt="${p.name}">` : p.emoji}
+        ${p.best ? `<span class="tag-best">⭐ TERLARIS</span>` : ""}
+      </div>
+      <div class="card-body">
+        <div class="stars">★★★★★ <span style="color:var(--muted)">${p.rating}</span></div>
+        <h3>${p.name}</h3>
+        <p>${p.desc}</p>
+        <div class="price-row">
+          <div class="price">${p.old ? `<s>${rupiah(p.old)}</s>` : ""}${rupiah(p.price)}</div>
+          <button class="add-btn" onclick="addToCart(${p.id})">+ Keranjang 🛒</button>
+        </div>
+      </div>
+    </article>`).join("")
+  : `<div class="empty-msg">😢 Menu tidak ditemukan. Coba kata kunci lain ya!</div>`;
+}
+renderMenu();
+
+document.getElementById("filters").addEventListener("click", e => {
+  if(!e.target.classList.contains("filter-btn")) return;
+  document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+  e.target.classList.add("active");
+  activeFilter = e.target.dataset.filter;
+  renderMenu();
+});
+document.getElementById("searchInput").addEventListener("input", e => {
+  searchText = e.target.value.toLowerCase();
+  renderMenu();
+});
+
+/* ===== KERANJANG ===== */
+let cart = {}; // id -> qty
+const drawer = document.getElementById("drawer"), overlay = document.getElementById("overlay");
+function cartQtyTotal(){ return Object.values(cart).reduce((a,b)=>a+b,0); }
+function cartPriceTotal(){ return Object.entries(cart).reduce((sum,[id,q]) => sum + PRODUCTS.find(p=>p.id==id).price*q, 0); }
+
+function addToCart(id){
+  cart[id] = (cart[id]||0) + 1;
+  updateCartUI();
+  const p = PRODUCTS.find(x=>x.id===id);
+  showToast(`✅ ${p.name} masuk keranjang!`);
+}
+function changeQty(id, delta){
+  cart[id] = (cart[id]||0) + delta;
+  if(cart[id] <= 0) delete cart[id];
+  updateCartUI();
+}
+function updateCartUI(){
+  document.getElementById("cartCount").textContent = cartQtyTotal();
+  const box = document.getElementById("cartItems");
+  const entries = Object.entries(cart);
+  if(!entries.length){
+    box.innerHTML = `<div class="cart-empty">🛒 Keranjangmu masih kosong.<br>Yuk pilih dawet favoritmu di menu!</div>`;
+  } else {
+    box.innerHTML = entries.map(([id,q]) => {
+      const p = PRODUCTS.find(x=>x.id==id);
+      return `<div class="cart-item">
+        <div class="ci-ic" style="background:${p.bg}">${p.emoji}</div>
+        <div><h4>${p.name}</h4><div class="ci-price">${rupiah(p.price)} × ${q} = ${rupiah(p.price*q)}</div></div>
+        <div class="ci-qty">
+          <button onclick="changeQty(${id},-1)">−</button><b>${q}</b><button onclick="changeQty(${id},1)">+</button>
+        </div>
+      </div>`;
+    }).join("");
+  }
+  document.getElementById("cartSubtotal").textContent = rupiah(cartPriceTotal());
+  document.getElementById("cartTotal").textContent = rupiah(cartPriceTotal());
+}
+updateCartUI();
+
+function openCart(){ drawer.classList.add("show"); overlay.classList.add("show"); }
+function closeCart(){ drawer.classList.remove("show"); overlay.classList.remove("show"); }
+document.getElementById("cartBtn").addEventListener("click", openCart);
+document.getElementById("closeDrawer").addEventListener("click", closeCart);
+overlay.addEventListener("click", closeCart);
+document.getElementById("clearCart").addEventListener("click", () => { cart={}; updateCartUI(); showToast("🗑️ Keranjang dikosongkan"); });
+
+document.getElementById("checkoutBtn").addEventListener("click", () => {
+  const entries = Object.entries(cart);
+  if(!entries.length){ showToast("⚠️ Keranjang masih kosong, pilih menu dulu ya!"); return; }
+  let msg = "Halo Es Dawet Ayu Solo! 🍧\nSaya mau order:\n\n";
+  entries.forEach(([id,q]) => {
+    const p = PRODUCTS.find(x=>x.id==id);
+    msg += `• ${p.name} × ${q} = ${rupiah(p.price*q)}\n`;
+  });
+  msg += `\n💰 *Total: ${rupiah(cartPriceTotal())}*\n\nNama: \nAlamat pengiriman: \nTerima kasih! 😊`;
+  window.open(`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`, "_blank");
+});
+
+/* ===== TOAST ===== */
+let toastTimer;
+function showToast(text){
+  const t = document.getElementById("toast");
+  t.textContent = text; t.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(()=>t.classList.remove("show"), 2600);
+}
+
+/* ===== KALKULATOR PAKET ===== */
+let calc = { guests:100, paketName:"Paket Komplit", paketPrice:10000, shipName:"Dalam Kota Solo", shipPrice:0 };
+function updateCalc(){
+  const total = calc.guests * calc.paketPrice + calc.shipPrice;
+  document.getElementById("guestVal").textContent = calc.guests;
+  document.getElementById("sumPaket").textContent = calc.paketName;
+  document.getElementById("sumGuest").textContent = calc.guests + " porsi";
+  document.getElementById("sumPrice").textContent = rupiah(calc.paketPrice);
+  document.getElementById("sumShip").textContent = calc.shipPrice===0 ? "GRATIS" : rupiah(calc.shipPrice);
+  document.getElementById("sumTotal").textContent = rupiah(total);
+}
+document.getElementById("guestRange").addEventListener("input", e => { calc.guests = +e.target.value; updateCalc(); });
+function bindOpts(id, cb){
+  document.getElementById(id).addEventListener("click", e => {
+    const el = e.target.closest(".paket-opt"); if(!el) return;
+    el.parentElement.querySelectorAll(".paket-opt").forEach(o=>o.classList.remove("selected"));
+    el.classList.add("selected"); cb(el); updateCalc();
+  });
+}
+bindOpts("paketOpts", el => { calc.paketName = el.dataset.name; calc.paketPrice = +el.dataset.price; });
+bindOpts("areaOpts", el => { calc.shipName = el.dataset.name; calc.shipPrice = +el.dataset.price; });
+updateCalc();
+
+document.getElementById("calcOrderBtn").addEventListener("click", () => {
+  const total = calc.guests * calc.paketPrice + calc.shipPrice;
+  const msg = `Halo Es Dawet Ayu Solo! 🎉\nSaya mau booking *PAKET ACARA*:\n\n📦 Paket: ${calc.paketName}\n👥 Jumlah: ${calc.guests} porsi × ${rupiah(calc.paketPrice)}\n🚚 Area: ${calc.shipName} (${calc.shipPrice===0?"GRATIS":rupiah(calc.shipPrice)})\n💰 Estimasi total: *${rupiah(total)}*\n\nNama: \nTanggal acara: \nLokasi acara: \nMohon info ketersediaan tanggalnya ya, terima kasih! 😊`;
+  window.open(`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`, "_blank");
+});
+
+/* ===== TESTIMONI SLIDER ===== */
+const TESTI = [
+  {n:"Ibu Ratna — Solo", c:"#0e7a3d", t:"Dawetnya beneran Original! Cendolnya kenyal, santannya gurih, gulanya legit. Sudah 3x pesan untuk pengajian di rumah, tamu-tamu selalu nanya beli di mana.", r:"Pesan Paket Arisan"},
+  {n:"Bapak Dedi Saputra — Kartasura", c:"#c67c2e", t:"Kemarin pesan 300 porsi buat resepsi pernikahan anak saya. Pelayanannya rapi, booth-nya cantik, rasanya konsisten enak sampai porsi terakhir. Recommended!", r:"Pesan Paket Pernikahan"},
+  {n:"Sari — Mahasiswi UNS", c:"#7c4dbd", t:"Es dawet duriannya juara satu se-Solo! Duriannya asli bukan perisa. Harganya ramah di kantong mahasiswa, tiap minggu pasti jajan ke sini.", r:"Favorit: Dawet Durian"},
+  {n:"Bapak H. Bambang Sutrisno — Sukoharjo", c:"#1565c0", t:"Sudah langganan untuk acara kantor. Admin WA-nya fast respon, pengiriman tepat waktu, dan selalu dapat bonus tester. Semoga makin laris!", r:"Pelanggan Acara Kantor"},
+];
+let slideIdx = 0, slideTimer;
+const slidesEl = document.getElementById("slides"), dotsEl = document.getElementById("dots");
+slidesEl.innerHTML = TESTI.map(t => `
+  <div class="slide">
+    <div class="ava" style="background:${t.c}">${t.n.charAt(0)}</div>
+    <div class="stars" style="font-size:1.1rem">★★★★★</div>
+    <p>"${t.t}"</p><b>${t.n}</b><span>${t.r}</span>
+  </div>`).join("");
+dotsEl.innerHTML = TESTI.map((_,i)=>`<button class="dot-nav${i===0?" active":""}" onclick="goSlide(${i})" aria-label="Testimoni ${i+1}"></button>`).join("");
+function goSlide(i){
+  slideIdx = (i + TESTI.length) % TESTI.length;
+  slidesEl.style.transform = `translateX(-${slideIdx*100}%)`;
+  document.querySelectorAll(".dot-nav").forEach((d,j)=>d.classList.toggle("active", j===slideIdx));
+  restartAuto();
+}
+function restartAuto(){ clearInterval(slideTimer); slideTimer = setInterval(()=>goSlide(slideIdx+1), 5000); }
+document.getElementById("prevBtn").addEventListener("click", ()=>goSlide(slideIdx-1));
+document.getElementById("nextBtn").addEventListener("click", ()=>goSlide(slideIdx+1));
+restartAuto();
+
+/* ===== FAQ ===== */
+const FAQS = [
+  ["Apakah bisa pesan untuk acara pernikahan / hajatan?","Bisa banget! Kami melayani 25–1.000+ porsi lengkap dengan gerobak/booth cantik, pramusaji, dan peralatan saji. Silakan pakai Kalkulator Paket di atas, lalu booking tanggal via WhatsApp. Disarankan booking H-7 agar tanggal aman."],
+  ["Berapa minimal order untuk delivery?","Minimal 5 gelas untuk pengantaran area Solo kota (ongkir menyesuaikan jarak / bisa gratis untuk order tertentu). Di bawah itu silakan ambil langsung di tempat atau gabung order bareng teman kantor!"],
+  ["Apakah dawetnya tahan berapa lama?","Karena tanpa pengawet, dawet paling nikmat disantap di hari yang sama. Simpan di kulkas (santan & gula dipisah) bisa tahan hingga 24 jam. Untuk acara, kami racik langsung di lokasi agar selalu fresh."],
+  ["Bagaimana cara pembayaran?","Bisa tunai, transfer bank, atau QRIS. Untuk paket acara cukup DP 30% untuk mengunci tanggal, pelunasan dilakukan pada hari-H setelah acara selesai."],
+  ["Apakah menerima pesanan kemasan untuk dijual lagi (reseller)?","Menerima! Ada harga khusus reseller & paket usaha dengan margin menarik, termasuk spanduk dan gerobak. Chat WA 0811-8448-939 untuk info kemitraan."],
+];
+document.getElementById("faqList").innerHTML = FAQS.map(([q,a]) => `
+  <div class="faq-item">
+    <button class="faq-q">${q}<span class="arrow">▼</span></button>
+    <div class="faq-a"><p>${a}</p></div>
+  </div>`).join("");
+document.querySelectorAll(".faq-q").forEach(btn => btn.addEventListener("click", () => {
+  const item = btn.parentElement, wasOpen = item.classList.contains("open");
+  document.querySelectorAll(".faq-item").forEach(i=>i.classList.remove("open"));
+  if(!wasOpen) item.classList.add("open");
+}));
+
+/* ===== FORM ORDER CEPAT ===== */
+const fVarian = document.getElementById("fVarian");
+fVarian.innerHTML = PRODUCTS.filter(p=>p.cat!=="paket").map(p=>`<option value="${p.id}">${p.name} — ${rupiah(p.price)}</option>`).join("");
+let qQty = 1;
+function updateQuick(){
+  document.getElementById("qVal").textContent = qQty;
+  const p = PRODUCTS.find(x=>x.id==fVarian.value);
+  document.getElementById("qTotal").textContent = "= " + rupiah(p.price*qQty);
+}
+document.getElementById("qPlus").addEventListener("click", ()=>{ qQty++; updateQuick(); });
+document.getElementById("qMinus").addEventListener("click", ()=>{ if(qQty>1) qQty--; updateQuick(); });
+fVarian.addEventListener("change", updateQuick);
+updateQuick();
+
+document.getElementById("quickForm").addEventListener("submit", e => {
+  e.preventDefault();
+  const nama = document.getElementById("fNama").value.trim();
+  const p = PRODUCTS.find(x=>x.id==fVarian.value);
+  const catatan = document.getElementById("fCatatan").value.trim();
+  const msg = `Halo Es Dawet Ayu Solo! 🍧\nSaya mau order:\n\n• ${p.name} × ${qQty} = *${rupiah(p.price*qQty)}*\n\nNama: ${nama}${catatan ? `\nCatatan: ${catatan}` : ""}\n\nTerima kasih! 😊`;
+  window.open(`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`, "_blank");
+  showToast("🚀 Membuka WhatsApp... Pesananmu siap dikirim!");
+});
+
+/* ===== KEMITRAAN ===== */
+const mPaketSelect = document.getElementById("mPaket");
+document.querySelectorAll(".mitra-card").forEach(card => {
+  card.addEventListener("click", () => {
+    document.querySelectorAll(".mitra-card").forEach(c => c.classList.remove("selected"));
+    card.classList.add("selected");
+    mPaketSelect.value = card.dataset.paket;
+    showToast(`🤝 Paket dipilih: ${card.querySelector("h3").textContent}`);
+    document.getElementById("formKemitraan").scrollIntoView({behavior:"smooth", block:"center"});
+  });
+});
+mPaketSelect.addEventListener("change", () => {
+  document.querySelectorAll(".mitra-card").forEach(c =>
+    c.classList.toggle("selected", c.dataset.paket === mPaketSelect.value));
+});
+
+document.getElementById("mitraForm").addEventListener("submit", e => {
+  e.preventDefault();
+  const nama = document.getElementById("mNama").value.trim();
+  const wa = document.getElementById("mWa").value.trim();
+  const kota = document.getElementById("mKota").value.trim();
+  const email = document.getElementById("mEmail").value.trim();
+  const alamat = document.getElementById("mAlamat").value.trim();
+  const paket = mPaketSelect.value;
+  const modal = document.getElementById("mModal").value;
+  const rencana = document.getElementById("mRencana").value;
+  const lokasi = document.querySelector('input[name="mLokasi"]:checked').value;
+  const pengalaman = document.querySelector('input[name="mPengalaman"]:checked').value;
+  const catatan = document.getElementById("mCatatan").value.trim();
+
+  if(!nama || !wa || !kota){ showToast("⚠️ Mohon isi Nama, No. WhatsApp & Kota dulu ya!"); return; }
+  if(!/^(\+62|62|0)8[0-9]{7,12}$/.test(wa.replace(/[\s\-\.]/g,""))){
+    showToast("⚠️ Nomor WhatsApp sepertinya tidak valid. Contoh: 081234567890"); return;
+  }
+  const msg =
+`Halo Admin Kemitraan Es Dawet Ayu Solo! 🤝🍧
+Saya mau daftar / tanya-tanya *KEMITRAAN*:
+
+👤 Nama: ${nama}
+📱 No. WA: ${wa}
+${email ? `📧 Email: ${email}\n` : ""}📍 Kota: ${kota}
+${alamat ? `🏠 Rencana Lokasi: ${alamat}\n` : ""}
+📦 Paket Dipilih: *${paket}*
+💰 Modal Disiapkan: ${modal}
+🗓️ Rencana Mulai: ${rencana}
+📌 Lokasi Usaha: ${lokasi}
+🌱 Pengalaman: ${pengalaman}
+${catatan ? `💬 Pertanyaan: ${catatan}\n` : ""}
+Mohon info lengkap & jadwal konsultasi gratisnya ya. Terima kasih! 😊`;
+  window.open(`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`, "_blank");
+  showToast("🚀 Membuka WhatsApp... Data kemitraanmu siap dikirim!");
+});
+
+/* ===== MARQUEE ===== */
+const mText = "🍧 ES DAWET Original &nbsp;•&nbsp; 🌿 PANDAN ASLI &nbsp;•&nbsp; 🥥 SANTAN SEGAR &nbsp;•&nbsp; 🍯 GULA AREN MURNI &nbsp;•&nbsp; 🎉 SIAP UNTUK ACARA & HAJATAN &nbsp;•&nbsp; 📞 WA 0811-8448-939 &nbsp;•&nbsp; ";
+document.getElementById("marquee").innerHTML = mText.repeat(4);
+
+/* ===== NAV MOBILE & COUNTER & REVEAL ===== */
+document.getElementById("hamburger").addEventListener("click", ()=>document.getElementById("navLinks").classList.toggle("show"));
+document.querySelectorAll("#navLinks a").forEach(a=>a.addEventListener("click", ()=>document.getElementById("navLinks").classList.remove("show")));
+
+const counterObs = new IntersectionObserver(es => es.forEach(en => {
+  if(!en.isIntersecting) return;
+  const el = en.target, target = +el.dataset.target, t0 = performance.now();
+  (function tick(now){
+    const p = Math.min((now-t0)/1600, 1);
+    el.textContent = Math.floor(target * (1-Math.pow(1-p,3))).toLocaleString("id-ID");
+    if(p<1) requestAnimationFrame(tick);
+  })(t0);
+  counterObs.unobserve(el);
+}), {threshold:.5});
+document.querySelectorAll(".counter").forEach(el=>counterObs.observe(el));
+
+const revealObs = new IntersectionObserver(es => es.forEach(en => { if(en.isIntersecting){ en.target.classList.add("visible"); revealObs.unobserve(en.target);} }), {threshold:.12});
+document.querySelectorAll(".reveal").forEach(el=>revealObs.observe(el));
+</script>
+</body>
+</html>
